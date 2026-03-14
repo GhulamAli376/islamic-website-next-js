@@ -10,7 +10,7 @@ export default function HeroVideo() {
         loop
         className="absolute w-full h-full object-cover"
       >
-        <source src="/heroislamic.mp4" type="video/mp4" />
+        <source src="/heronew.mp4" type="video/mp4" />
       </video>
 
       {/* DARK OVERLAY */}

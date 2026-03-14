@@ -4,15 +4,24 @@ import { useEffect, useState } from "react"
 export default function AllahName(){
 
 const [name,setName] = useState([])
+const [loading,setLoading] = useState(true)
 
 useEffect(()=>{
 
 async function getData(){
 
+try{
+
 const res = await fetch(`/api/allahname`)
 const data = await res.json()
 
 setName(data)
+
+}catch(err){
+console.log(err)
+}
+
+setLoading(false)
 
 }
 
@@ -20,35 +29,70 @@ getData()
 
 },[])
 
+if(loading){
+
 return(
 
-<div className="p-8 max-w-7xl mx-auto">
+<div className="flex items-center justify-center min-h-screen bg-black text-white">
 
-<h1 className="text-4xl font-bold text-center mb-10 text-green-700">
+<div className="animate-spin rounded-full h-16 w-16 border-b-4 border-yellow-500"></div>
+
+</div>
+
+)
+
+}
+
+return(
+
+<div className="min-h-screen pt-36 pb-20 bg-gradient-to-b from-black via-gray-900 to-black text-white">
+
+{/* HEADER */}
+
+<div className="max-w-6xl mx-auto text-center mb-14 px-6">
+
+<h1 className="text-5xl font-bold text-yellow-400 mb-4">
 99 Names of Allah
 </h1>
 
-<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-6">
+<p className="text-gray-300 text-lg">
+Learn and reflect upon the beautiful names of Allah (Asma ul Husna)
+</p>
+
+</div>
+
+{/* GRID */}
+
+<div className="max-w-7xl mx-auto px-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+
 {name.map((item,index)=>(
 
 <div
 key={index}
-className="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-xl transition border"
+className="bg-white/10 backdrop-blur-lg border border-green-600 rounded-2xl p-6 text-center shadow-xl hover:scale-105 hover:border-yellow-400 transition duration-300"
 >
 
-<h2 className="text-sm text-gray-500 mb-2">
+{/* NUMBER */}
+
+<p className="text-sm text-gray-300 mb-2">
 {item.number}
+</p>
+
+{/* ARABIC NAME */}
+
+<h2 className="text-3xl font-bold text-green-400 mb-2">
+{item.name}
 </h2>
 
-<h1 className="text-2xl font-bold text-green-700">
-{item.name}
-</h1>
+{/* TRANSLITERATION */}
 
-<p className="text-lg font-semibold text-gray-700">
+<p className="text-lg font-semibold text-yellow-300">
 {item.transliteration}
 </p>
 
-<p className="text-sm text-gray-500 mt-2">
+{/* MEANING */}
+
+<p className="text-sm text-gray-300 mt-2">
 {item.en.meaning}
 </p>
 

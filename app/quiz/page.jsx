@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import confetti from "canvas-confetti"
 import { jsPDF } from "jspdf"
+import Navbar from "../components/Navbar/page"
 
 export default function QuizPage(){
 
@@ -132,16 +133,14 @@ return(
 
 {/* background video */}
 
-<video
-autoPlay
-
-loop
-playsInline
-preload="auto"
-className="absolute w-full h-full object-cover"
->
-<source src="/mosque.mp4" type="video/mp4"/>
-</video>
+ <video
+        autoPlay
+        muted
+        loop
+        className="absolute w-full h-full object-cover"
+      >
+        <source src="/mosque.mp4" type="video/mp4" />
+      </video>
 
 <div className="absolute inset-0 bg-black/70"></div>
 
@@ -210,17 +209,17 @@ autoPlay
 muted
 loop
 playsInline
-preload="auto"
+preload="metadata"
 className="absolute w-full h-full object-cover"
 >
-<source src="/islamic-bg.mp4" type="video/mp4"/>
+<source src="/mosquenew.mp4" type="video/mp4"/>
 </video>
 
 <div className="absolute inset-0 bg-black/70"></div>
 
 {/* quiz card */}
 
-<div className="relative bg-gradient-to-br from-black/70 to-gray-900/70 border border-yellow-500 shadow-2xl rounded-2xl max-w-xl w-full p-10">
+<div className="relative  mt-24 bg-gradient-to-br from-black/70 to-gray-900/70 border border-yellow-500 shadow-2xl rounded-2xl max-w-xl w-full p-10">
 
 {/* progress bar */}
 

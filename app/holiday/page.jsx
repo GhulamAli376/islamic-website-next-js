@@ -1,23 +1,35 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useState,useEffect } from "react"
 
 export default function Holidays(){
 
 const [holidays,setHolidays] = useState([])
+const [loading,setLoading] = useState(true)
 
 useEffect(()=>{
 
 async function getData(){
 
-let allEvents = []
+try{
+
+const requests = []
 
 for(let month=1; month<=12; month++){
 
-const res = await fetch(
-`https://api.aladhan.com/v1/hijriCalendarByCity?city=Karachi&country=Pakistan&method=1&month=${month}&year=1447`
+requests.push(
+
+fetch(`https://api.aladhan.com/v1/hijriCalendarByCity?city=Karachi&country=Pakistan&method=1&month=${month}&year=1447`)
+.then(res=>res.json())
+
 )
 
-const data = await res.json()
+}
+
+const responses = await Promise.all(requests)
+
+let allEvents = []
+
+responses.forEach(data=>{
 
 const events = data.data
 .filter(item => item.date.hijri.holidays.length > 0)
@@ -29,9 +41,17 @@ event: item.date.hijri.holidays[0]
 
 allEvents.push(...events)
 
-}
+})
 
 setHolidays(allEvents)
+
+}catch(err){
+
+console.error("Holiday fetch error:",err)
+
+}
+
+setLoading(false)
 
 }
 
@@ -39,24 +59,30 @@ getData()
 
 },[])
 
+if(loading){
+return(
+<p className="text-center text-gray-300 mt-10">Loading Holidays...</p>
+)
+}
+
 return(
 
-<div className="p-10 min-h-screen">
+<div className="bg-white/5 backdrop-blur-lg border border-yellow-500 rounded-2xl p-6 shadow-xl">
 
-<h1 className="text-4xl font-bold text-yellow-300 mb-8 text-center">
+<h2 className="text-3xl font-bold text-center text-yellow-400 mb-8">
 🕌 Islamic Holidays
-</h1>
+</h2>
 
-<div className="overflow-x-auto bg-white/90 backdrop-blur-lg rounded-2xl shadow-2xl">
+<div className="overflow-x-auto">
 
-<table className="w-full border-collapse min-w-[600px]">
+<table className="w-full text-left text-gray-200">
 
-<thead className="bg-green-700 text-white">
+<thead className="bg-gradient-to-r from-green-700 to-emerald-800 text-white">
 
 <tr>
-<th className="border p-3 text-left">Gregorian</th>
-<th className="border p-3 text-left">Hijri</th>
-<th className="border p-3 text-left">Event</th>
+<th className="p-4">Gregorian</th>
+<th className="p-4">Hijri</th>
+<th className="p-4">Event</th>
 </tr>
 
 </thead>
@@ -65,10 +91,21 @@ return(
 
 {holidays.map((item,index)=>(
 
-<tr key={index} className={`text-gray-800 hover:bg-green-100 transition ${index % 2 === 0 ? "bg-green-50" : "bg-white"}`}>
-<td className="border p-2">{item.gregorian}</td>
-<td className="border p-2">{item.hijri}</td>
-<td className="border p-2 font-semibold text-green-700">{item.event}</td>
+<tr
+key={index}
+className="border-b border-gray-700 hover:bg-green-900/40 transition"
+>
+
+<td className="p-4">{item.gregorian}</td>
+
+<td className="p-4 text-yellow-300 font-medium">
+{item.hijri}
+</td>
+
+<td className="p-4 font-semibold text-green-400">
+{item.event}
+</td>
+
 </tr>
 
 ))}
