@@ -1,3 +1,5 @@
+import Loading from "@/app/loading";
+import { Suspense } from "react";
 
 export default function AboutCenter() {
   return (
@@ -9,14 +11,17 @@ export default function AboutCenter() {
         <div className="relative w-fit">
 
           {/* YELLOW FRAME */}
+          
           <div className="absolute -top-6 -left-6 w-full h-full border-[10px] border-yellow-500 rounded-lg"></div>
 
           {/* IMAGE */}
+          <Suspense fallback = {<Loading/>}>
           <img
             src="/Masjid-e-Nabwi.webp"
             className="relative rounded-lg shadow-lg"
           />
 
+</Suspense>
         </div>
 
         {/* TEXT SIDE */}

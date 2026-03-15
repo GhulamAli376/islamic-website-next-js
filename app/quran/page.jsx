@@ -8,6 +8,9 @@ cache:"no-store"
 
 const data = await res.json()
 
+// SORT BY NUMBER
+data.sort((a,b)=> a.number - b.number)
+
 return data
 
 }
@@ -44,8 +47,6 @@ Read and explore the chapters of the Holy Quran
 
 <div className="relative bg-white/10 backdrop-blur-lg border border-green-600 rounded-2xl p-6 text-center shadow-xl hover:scale-105 hover:border-yellow-400 transition duration-300 cursor-pointer">
 
-{/* SURAH NUMBER */}
-
 <div className="absolute -top-4 left-1/2 -translate-x-1/2 rotate-45 w-12 h-12 bg-gradient-to-br from-green-600 to-green-800 flex items-center justify-center text-white font-bold shadow-lg">
 
 <span className="-rotate-45">
@@ -54,19 +55,13 @@ Read and explore the chapters of the Holy Quran
 
 </div>
 
-{/* ARABIC NAME */}
-
 <p className="text-3xl text-green-400 mt-8 font-semibold">
 {surah.name}
 </p>
 
-{/* ENGLISH NAME */}
-
 <h2 className="text-lg font-semibold mt-2 text-yellow-300">
 {surah.englishName}
 </h2>
-
-{/* INFO */}
 
 <p className="text-gray-400 text-sm mt-2">
 {surah.revelationType} • {surah.numberOfAyahs} Ayahs

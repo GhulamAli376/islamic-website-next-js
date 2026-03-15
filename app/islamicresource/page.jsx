@@ -11,10 +11,12 @@ useEffect(()=>{
 
 async function getData(){
 
-const res = await fetch("/data/basicknowledge.json")
-const data = await res.json()
+const res = await fetch("/api/basicknowledge")
+const json = await res.json()
 
-setData(data)
+console.log(json)
+
+setData(json)
 
 }
 
@@ -45,7 +47,7 @@ Learn important Islamic knowledge step by step
 
 <div className="max-w-3xl mx-auto border-l border-green-700">
 
-{data.slice(0,50).map((item,index)=>{
+{Array.isArray(data) && data.map((item,index)=>{
 
 const isOpen = open === index
 
@@ -53,11 +55,7 @@ return(
 
 <div key={index} className="relative mb-10 ml-6">
 
-{/* DOT */}
-
 <span className="absolute -left-3 flex items-center justify-center w-6 h-6 bg-green-700 rounded-full"></span>
-
-{/* QUESTION */}
 
 <div
 onClick={()=>setOpen(isOpen ? null : index)}
@@ -73,11 +71,7 @@ className="bg-white/10 backdrop-blur-lg border border-green-700 rounded-xl p-5 c
 <div className="mt-4 border-t border-green-700 pt-4">
 
 <p className="text-gray-300">
-✅ Correct Answer: {item.correct_answer}
-</p>
-
-<p className="text-gray-400 mt-2">
-Options: {item.options.join(", ")}
+✅ {item.answer}
 </p>
 
 </div>

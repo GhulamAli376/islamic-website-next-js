@@ -12,24 +12,16 @@ async function getData(){
 
 try{
 
-const requests = []
+let allEvents = []
 
 for(let month=1; month<=12; month++){
 
-requests.push(
-
-fetch(`https://api.aladhan.com/v1/hijriCalendarByCity?city=Karachi&country=Pakistan&method=1&month=${month}&year=1447`)
-.then(res=>res.json())
-
+const res = await fetch(
+`/api/hijri`
 )
 
-}
-
-const responses = await Promise.all(requests)
-
-let allEvents = []
-
-responses.forEach(data=>{
+const data = await res.json()
+if(Array.isArray(data.data)){
 
 const events = data.data
 .filter(item => item.date.hijri.holidays.length > 0)
@@ -41,7 +33,9 @@ event: item.date.hijri.holidays[0]
 
 allEvents.push(...events)
 
-})
+}
+
+}
 
 setHolidays(allEvents)
 

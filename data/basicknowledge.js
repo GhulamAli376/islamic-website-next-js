@@ -1,4 +1,4 @@
-[
+const question = [
 {
 "question":"What is Islam?",
 "answer":"Islam is the religion of submission to the will of Allah."
@@ -200,3 +200,5 @@
 "answer":"Imam Mahdi."
 }
 ]
+
+export default question;

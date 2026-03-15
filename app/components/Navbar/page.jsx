@@ -65,6 +65,7 @@ Bismillah
 
 <li><Link href="/Allahname" className="hover:text-orange-400">Allah Names</Link></li>
 <li><Link href="/quiz" className="hover:text-orange-400">Quiz</Link></li>
+<li><Link href="/islamicresource" className="hover:text-orange-400">Basic knowledge</Link></li>
 </ul>
 
 {/* MOBILE BUTTON */}
