@@ -7,7 +7,7 @@ const [name,setName] = useState([])
 const [loading,setLoading] = useState(true)
 
 useEffect(()=>{
-
+document.title = "Allah Names | Read & Learn Islamic Knowledge"
 async function getData(){
 
 try{

@@ -9,6 +9,7 @@ const [index,setIndex] = useState(0)
 
 useEffect(()=>{
 
+document.title = "Daily Dua | Read & Learn Islamic Knowledge"
 async function getData(){
 
 const res = await fetch("/api/dua")

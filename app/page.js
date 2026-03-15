@@ -10,7 +10,6 @@ import AboutCenter from "./components/About/page"
 import PillarsOfIslam from "./components/PillarOfIslam/page"
 import IslamicResources from "./components/IslamicResource/page"
 
-
 export default function Home(){
 
   const [loading,setLoading] = useState(true)

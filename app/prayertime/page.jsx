@@ -12,6 +12,7 @@ const [times,setTimes] = useState(null)
 
 useEffect(()=>{
 
+document.title = "Prayer Times | Read & Learn Islamic Knowledge"
 const fetchData = async ()=>{
 
 try{

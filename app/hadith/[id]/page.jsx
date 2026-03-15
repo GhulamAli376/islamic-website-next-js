@@ -11,6 +11,7 @@ const [hadith, setHadith] = useState(null);
 
 useEffect(() => {
 
+document.title = "Hadith Detail | Read & Learn Islamic Knowledge"
 async function getData() {
 
 try{

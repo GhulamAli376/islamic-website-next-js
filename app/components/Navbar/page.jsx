@@ -43,9 +43,14 @@ return(
 
 <Link href="/" className="flex items-center gap-3">
 
-<div className="w-10 h-10 bg-yellow-500 rounded-full"></div>
+<div className="w-20 h-20 rounded-full">
+<img
+        src="/favicon.png"
+      />
 
-<h1 className="text-xl font-semibold">
+</div>
+
+<h1 className="text-4xl font-semibold">
 Bismillah
 </h1>
 
@@ -55,7 +60,7 @@ Bismillah
 
 <ul className="hidden md:flex gap-8 text-sm font-medium">
 
-<li><Link href="/" className="hover:text-orange-400">Home</Link></li>
+<li><Link href="/" className="hover:text-orange-400 text-1xl">Home</Link></li>
 
 <li><Link href="/quran" className="hover:text-orange-400">Quran</Link></li>
 

@@ -14,6 +14,7 @@ const surahNumber = String(id).padStart(3,"0")
 
 useEffect(()=>{
 
+document.title = "Surah Detail | Read & Learn Islamic Knowledge"
 async function fetchSurah(){
 
 try{

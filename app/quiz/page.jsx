@@ -14,6 +14,8 @@ const [selected,setSelected] = useState(null)
 const [showAnswer,setShowAnswer] = useState(false)
 
 useEffect(()=>{
+  
+document.title = "Quiz | Read & Learn Islamic Knowledge"
 fetch("/api/quiz?limit=20")
 .then(res=>res.json())
 .then(data=>setQuestions(data))

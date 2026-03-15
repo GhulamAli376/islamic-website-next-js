@@ -9,6 +9,7 @@ const [open,setOpen] = useState(null)
 
 useEffect(()=>{
 
+document.title = "Basic Knowledge | Read & Learn Islamic Knowledge"
 async function getData(){
 
 const res = await fetch("/api/basicknowledge")

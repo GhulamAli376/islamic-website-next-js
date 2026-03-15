@@ -10,6 +10,7 @@ const [loading,setLoading] = useState(true)
 
 useEffect(() => {
 
+document.title = "Hadith | Read & Learn Islamic Knowledge"
 async function getData() {
 
 try{

@@ -1,24 +1,31 @@
+import Image from "next/image";
+
 export default function PillarsOfIslam() {
   const pillars = [
     {
       title: "Shahada",
       text: "Faith in the oneness of Allah and Prophet Muhammad ﷺ as His messenger.",
+      icon:"/shahada.jpg"
     },
     {
       title: "Salah",
       text: "Performing the five daily prayers to maintain connection with Allah.",
+      icon:"/namaz.png"
     },
     {
       title: "Zakat",
       text: "Giving charity to help those in need and purify wealth.",
+      icon:"/zakat.jpg"
     },
     {
       title: "Sawm",
       text: "Fasting during the month of Ramadan for spiritual discipline.",
+      icon:"/roza.jpg"
     },
     {
       title: "Hajj",
       text: "Pilgrimage to Makkah once in a lifetime if able.",
+      icon:"/hajj.jpg"
     },
   ];
 
@@ -54,9 +61,15 @@ export default function PillarsOfIslam() {
               className="bg-white/90 text-black p-6 rounded-lg shadow hover:shadow-xl transition"
             >
 
-              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-orange-500 text-white text-xl font-bold">
-                {index + 1}
-              </div>
+ <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center rounded-full">
+  <Image
+    src={pillar.icon}
+    width={120}
+    height={120}
+    alt={pillar.title}
+    className="object-contain"
+  />
+</div>
 
               <h3 className="text-xl font-semibold mb-2">
                 {pillar.title}

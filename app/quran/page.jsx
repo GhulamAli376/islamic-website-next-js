@@ -1,5 +1,9 @@
 import Link from "next/link";
-
+export const metadata = {
+  title: "Quran | Read & Learn Islamic Knowledge",
+  description:
+    "Explore Islamic knowledge, quizzes, prayer times and learn about Islam in an interactive way.",
+};
 async function getSurahs() {
 
 const res = await fetch("http://localhost:3000/api/quran/surah",{
