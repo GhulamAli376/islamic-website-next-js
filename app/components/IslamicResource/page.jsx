@@ -45,7 +45,7 @@ export default function IslamicResources() {
             Explore Islamic Resources
           </h2>
 
-          <p className="text-gray-600 mt-4 max-w-xl mx-auto">
+          <p className="text-white-600 mt-4 max-w-xl mx-auto ">
             Discover authentic Islamic teachings including Quran, Hadith,
             daily duas, and the beautiful names of Allah.
           </p>
@@ -75,7 +75,7 @@ export default function IslamicResources() {
               {/* Content */}
               <div className="p-6 text-center">
 
-                <h3 className="text-xl font-semibold mb-2">
+                <h3 className="text-xl font-semibold mb-2 text-black">
                   {item.title}
                 </h3>
 

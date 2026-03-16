@@ -29,7 +29,7 @@ export default function IslamicLearning() {
             LEARN ISLAM
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-3">
+          <h2 className="text-4xl md:text-5xl font-bold mt-3 text-black">
             Islamic Learning
           </h2>
 

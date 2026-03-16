@@ -86,7 +86,7 @@ Explore authentic sayings of Prophet Muhammad ﷺ
 <div className="max-w-xl">
 
 <h2 className="font-semibold text-lg text-yellow-300">
-{h.headingEnglish || "No Heading"}
+{h.headingEnglish || `Hadith No ${h.id}`}
 </h2>
 
 <p className="text-gray-300 text-sm line-clamp-2 mt-1">

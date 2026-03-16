@@ -31,7 +31,7 @@ export default function AboutCenter() {
             ABOUT OUR CENTER
           </p>
 
-          <h2 className="text-4xl font-bold mb-6">
+          <h2 className="text-4xl font-bold mb-6 text-black">
             Welcome to Islamic Center
           </h2>
 

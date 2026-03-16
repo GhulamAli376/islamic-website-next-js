@@ -25,7 +25,7 @@ return(
 </div>
 
 <div className="flex gap-6">
-<span>info@islamic.com</span>
+<span>bismillah@islamic.com</span>
 <span>+92 304 0000000</span>
 </div>
 
@@ -71,6 +71,8 @@ Bismillah
 <li><Link href="/Allahname" className="hover:text-orange-400">Allah Names</Link></li>
 <li><Link href="/quiz" className="hover:text-orange-400">Quiz</Link></li>
 <li><Link href="/islamicresource" className="hover:text-orange-400">Basic knowledge</Link></li>
+
+<li><Link href="/dailydua" className="hover:text-orange-400">Dua</Link></li>
 </ul>
 
 {/* MOBILE BUTTON */}
@@ -96,6 +98,9 @@ className="md:hidden text-2xl"
 <Link href="/prayertime" className="block">Prayer Time</Link>
 <Link href="/Allahname" className="block">Allah Names</Link>
 <Link href="/quiz" className="block">Quiz</Link>
+<Link href="/islamicresource" className="block">Basic knowledge</Link>
+
+<Link href="/dailydua" className="block">Dua</Link>
 </div>
 
 )}
