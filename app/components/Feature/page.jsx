@@ -7,7 +7,7 @@ export default function IslamicLearning() {
       title: "Basic Knowledge of Islam",
       desc: "Learn the fundamentals of Islam including beliefs, practices, and Islamic teachings.",
       img: "/basicknowledge.jpg",
-      link: "/basic-knowledge"
+      link: "/islamicresource"
     },
     {
       title: "Islamic Quiz & Test",

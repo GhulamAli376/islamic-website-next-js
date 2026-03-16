@@ -19,13 +19,13 @@ export default function IslamicResources() {
       title: "Important Duas",
       desc: "Daily supplications every Muslim should know.",
       img: "/dua.jpg",
-      link: "/duas"
+      link: "/dailydua"
     },
     {
       title: "99 Names of Allah",
       desc: "Learn the beautiful names and attributes of Allah.",
       img: "/allahnames.jpg",
-      link: "/allah-names"
+      link: "/Allahname"
     }
   ]
 

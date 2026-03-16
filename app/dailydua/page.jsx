@@ -33,11 +33,11 @@ return(
 
 <div className="min-h-screen bg-gradient-to-br from-green-100 to-emerald-200 flex items-center justify-center p-8">
 
-<div className="max-w-4xl w-full bg-white rounded-2xl shadow-xl grid md:grid-cols-2 overflow-hidden">
+<div className="max-w-4xl w-full bg-white rounded-2xl shadow-xl grid md:grid-cols-2 overflow-hidden mt-36">
 
 {/* Image */}
 
-<div className="h-60 md:h-auto">
+<div className="h-30 md:h-auto">
 <img
 src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f"
 className="w-full h-full object-cover"

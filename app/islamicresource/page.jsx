@@ -15,7 +15,6 @@ async function getData(){
 const res = await fetch("/api/basicknowledge")
 const json = await res.json()
 
-console.log(json)
 
 setData(json)
 
@@ -31,7 +30,7 @@ return(
 
 {/* HEADER */}
 
-<div className="text-center mb-16">
+<div className="text-center mb-16 mt-9">
 
 <h1 className="text-5xl font-bold text-yellow-400 mb-4">
 🕌 Islamic Basic Knowledge
