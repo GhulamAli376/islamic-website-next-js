@@ -7,7 +7,7 @@ export const metadata = {
 };
 async function getSurahs() {
 
-const res = await fetch("http://localhost:3000/api/quran/surah",{
+const res = await fetch("/api/quran/surah",{
 cache:"no-store"
 })
 
