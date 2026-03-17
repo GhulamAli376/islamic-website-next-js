@@ -9,13 +9,17 @@ export const metadata = {
 
 async function getSurahs() {
   try {
-    const base = process.env.NEXT_PUBLIC_BASE_URL;
+    const base = process.env.NEXT_PUBLIC_BASE_URL; 
     const res = await fetch(`${base}/api/quran/surah`, { cache: "no-store" });
+
+    if (!res.ok) {
+      console.log("API response not ok:", res.status);
+      return [];
+    }
+
     const data = await res.json();
 
-    if (!data) return [];
-
-    const surahs = data;
+    const surahs = data?.data || data;
 
     surahs.sort((a, b) => a.number - b.number);
 
@@ -26,7 +30,6 @@ async function getSurahs() {
     return [];
   }
 }
-
 export default async function QuranPage() {
 
   const surahs = await getSurahs()
