@@ -53,13 +53,13 @@ Hadith
 </li>
 
 <li>
-<Link href="/allah-names" className="hover:text-yellow-400 transition">
+<Link href="/Allahname" className="hover:text-yellow-400 transition">
 99 Names of Allah
 </Link>
 </li>
 
 <li>
-<Link href="/prayer" className="hover:text-yellow-400 transition">
+<Link href="/prayertime" className="hover:text-yellow-400 transition">
 Prayer Times
 </Link>
 </li>
