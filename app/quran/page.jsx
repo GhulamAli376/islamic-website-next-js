@@ -1,29 +1,32 @@
-import Link from "next/link";
-import QuranSearch from "./quransearch/pages";
+import { headers } from "next/headers"
+import QuranSearch from "./quransearch/pages"
+
 export const metadata = {
   title: "Quran | Read & Learn Islamic Knowledge",
   description:
     "Explore Islamic knowledge, quizzes, prayer times and learn about Islam in an interactive way.",
-};
+}
+
 async function getSurahs() {
 
-const res = await fetch("/api/quran/surah",{
-cache:"no-store"
-})
+  const host = headers().get("host")
+  const protocol = process.env.NODE_ENV === "development" ? "http" : "https"
 
-const data = await res.json()
+  const res = await fetch(`${protocol}://${host}/api/quran/surah`, {
+    cache: "no-store"
+  })
 
-// SORT BY NUMBER
-data.sort((a,b)=> a.number - b.number)
+  const data = await res.json()
 
-return data
+  data.sort((a,b)=> a.number - b.number)
 
+  return data
 }
 
 export default async function QuranPage() {
 
-const surahs = await getSurahs()
+  const surahs = await getSurahs()
 
-return <QuranSearch surahs={surahs} />
+  return <QuranSearch surahs={surahs} />
 
 }
