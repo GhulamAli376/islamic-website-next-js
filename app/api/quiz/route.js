@@ -10,7 +10,7 @@ return array
 
 export async function GET(){
 
-const random = shuffle([...question]).slice(0,5)
+const random = shuffle([...question]).slice(0,20)
 
 const shuffledQuestions = random.map(q => ({
 ...q,
