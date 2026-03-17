@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-export default function QuranSearch({ surahs }) {
+export default function QuranSearch({ surahs = [] }) {
 
 const [search,setSearch] = useState("")
 

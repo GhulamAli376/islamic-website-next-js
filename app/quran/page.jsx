@@ -8,19 +8,23 @@ export const metadata = {
 }
 
 async function getSurahs() {
+  try {
+    const base = process.env.NEXT_PUBLIC_BASE_URL;
+    const res = await fetch(`${base}/api/quran/surah`, { cache: "no-store" });
+    const data = await res.json();
 
-  const host = headers().get("host")
-  const protocol = process.env.NODE_ENV === "development" ? "http" : "https"
+    if (!data) return [];
 
-  const res = await fetch(`${protocol}://${host}/api/quran/surah`, {
-    cache: "no-store"
-  })
+    const surahs = data;
 
-  const data = await res.json()
+    surahs.sort((a, b) => a.number - b.number);
 
-  data.sort((a,b)=> a.number - b.number)
+    return surahs;
 
-  return data
+  } catch (err) {
+    console.log("Error fetching surahs:", err);
+    return [];
+  }
 }
 
 export default async function QuranPage() {
