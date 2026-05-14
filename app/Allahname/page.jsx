@@ -14,8 +14,9 @@ try{
 
 const res = await fetch(`/api/allahname`)
 const data = await res.json()
-
-setName(data)
+const sort = data.sort((a,b)=>a.number - b.number)
+console.log(sort)
+setName(sort)
 
 }catch(err){
 console.log(err)

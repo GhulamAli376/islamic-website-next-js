@@ -18,7 +18,8 @@ try{
 const res = await fetch("/api/hadith");
 const data = await res.json();
 
-setHadiths(Array.isArray(data) ? data : []);
+const sort = data.sort((a,b)=>a.hadithNumber - b.hadithNumber)
+setHadiths(Array.isArray(sort) ? sort : []);
 
 }catch(err){
 console.log(err)
